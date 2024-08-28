@@ -14,8 +14,9 @@ import { cn } from "@/lib/utils";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
 import Home from "../page";
 import { BookMarked, HomeIcon, Settings } from "lucide-react";
+import Navbar from "./navbar";
 // import { Sidebar } from "lucide-react";
-
+import Footer from "./footer";
 export function SidebarDemo() {
   const links = [
     {
@@ -52,7 +53,7 @@ export function SidebarDemo() {
         "h-[100vh]" // for your use case, use `h-screen` instead of `h-[60vh]`
       )}
     >
-      <Sidebar open={open} setOpen={setOpen} animate={false}>
+      <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             <>
@@ -120,8 +121,11 @@ export const LogoIcon = () => {
 const Dashboard = () => {
   return (
     <div className="flex flex-1">
-      <div className="p-2 md:p-10 rounded-tl-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1 w-full h-full">
-                {/* // main page content */}
+      <div className=" rounded-tl-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1 w-full h-full">
+                <div className="flex flex-col h-full w-full" >
+                <Navbar />
+                <Footer />
+                </div>
       </div> 
     </div>
   );
